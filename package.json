@@ -1,0 +1,21 @@
+{
+  "name": "travel-packing-assistant",
+  "version": "1.0.0",
+  "description": "Smart travel packing assistant with weather-based suggestions",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "keywords": ["travel", "packing", "weather", "mern"],
+  "author": "Joseph",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
