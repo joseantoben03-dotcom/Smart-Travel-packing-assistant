@@ -1,9 +1,8 @@
 import axios from 'axios';
 
+// Create an Axios instance with base URL from environment variable
 export const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' 
-    ? '/api' 
-    : 'http://localhost:5000/api',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -18,9 +17,7 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 // Add a response interceptor to handle auth errors
