@@ -98,14 +98,7 @@ const DestinationForm = ({ destination = null, onSubmit, onClose, isEditing = fa
           />
         </div>
 
-        <Input
-          label="Weather Preference"
-          name="weatherPreference"
-          value={formData.weatherPreference}
-          onChange={handleChange}
-          placeholder="e.g., cold/hot/rain"
-        />
-
+        
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
             {error}
