@@ -45,11 +45,9 @@ app.get('/api/health', (req, res) => {
 });
 
 // Handle 404 - FIXED: Use proper Express syntax
-app.use((req, res, next) => {
-  console.log('404 - Route not found:', req.originalUrl);
-  res.status(404).json({ msg: 'Route not found' });
-});
-
+app.get("/",(req,res)=>{
+  res.send({message:"Backend is running properly"});
+})
 // Error handling middleware - MUST be last
 app.use((error, req, res, next) => {
   console.error('Unhandled error:', error);
